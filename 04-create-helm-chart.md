@@ -156,6 +156,16 @@ spec:
 
    * Go to the repo settings.
    * Enable GitHub Pages from the `main` branch.
+     OR
+Upload to Azure (AKS Use Case)
+If you are using AKS, you might want to host your charts in an Azure Storage Account (Static Website) or Azure Container Registry (ACR).
+
+For Azure Storage: You upload the .tgz and index.yaml to a blob container.
+
+**For ACR (Recommended)**: Modern Helm versions (v3+) use OCI registries. You don't actually need helm repo index for ACR; you just "push" the chart like a Docker image:
+
+Bash
+**helm push my-custom-app-0.1.0.tgz oci://myregistry.azurecr.io/helm**
 
 ---
 
